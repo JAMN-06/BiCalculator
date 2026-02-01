@@ -30,6 +30,7 @@ public class Calculator implements ActionListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(450,600);
         frame.setLayout(null);
+        frame.getContentPane().setBackground(new Color(243,243,243));
 
         JLabel programmerLabel = new JLabel("☰ Programmer");
           programmerLabel.setBounds(50,5,200,30);
@@ -97,13 +98,29 @@ public class Calculator implements ActionListener{
 
 
         addButton = new JButton("+");
+            addButton.setBackground(new Color(240,240,240));
+            addButton.setForeground(Color.BLACK);
         subButton = new JButton("-");
+            subButton.setBackground(new Color(240,240,240));
+            subButton.setForeground(Color.BLACK);
         timesButton = new JButton("*");
+            timesButton.setBackground(new Color(240,240,240));
+            timesButton.setForeground(Color.BLACK);
         divButton = new JButton("/");
+            divButton.setBackground(new Color(240,240,240));
+            divButton.setForeground(Color.BLACK);
         equButton = new JButton("=");
+            equButton.setBackground(new Color(240,240,240));
+            equButton.setForeground(Color.BLACK);
         delButton = new JButton(" ⌫ ");
+            delButton.setBackground(new Color(240,240,240));
+            delButton.setForeground(Color.BLACK);
         clrButton = new JButton("C");
+            clrButton.setBackground(new Color(240,240,240));
+            clrButton.setForeground(Color.BLACK);
         negButton = new JButton("(-)");
+            negButton.setBackground(new Color(240,240,240));
+            negButton.setForeground(Color.BLACK);
 
         functionButtons[0] = addButton;
         functionButtons[1] = subButton;
@@ -125,6 +142,16 @@ public class Calculator implements ActionListener{
             numberButtons[i].addActionListener(this);
             numberButtons[i].setFont(myFont);
             numberButtons[i].setFocusable(false);
+
+            if(i<=1){
+                numberButtons[i].setBackground(Color.WHITE);
+                numberButtons[i].setForeground(Color.BLACK);
+            }
+            else{
+                numberButtons[i].setBackground(new Color(224,224,224));
+                numberButtons[i].setForeground(new Color(150,150,150));
+                numberButtons[i].setEnabled(false);
+            }
         }
 
 
@@ -136,19 +163,27 @@ public class Calculator implements ActionListener{
             hexButtons[i].setFont(myFont);
             hexButtons[i].setFocusable(false);
             hexButtons[i].setEnabled(false);
-            hexButtons[i].setBackground(Color.LIGHT_GRAY);
+            hexButtons[i].setBackground(new Color(224,224,224));
+            hexButtons[i].setForeground(new Color(150,150,150));
+            hexButtons[i].setBorder(BorderFactory.createLineBorder(new Color(200,200,200)));
+
         }
 
         panel = new JPanel();
         panel.setBounds(50,250,350,280);
         panel.setLayout(new GridLayout (6,5,5,5));
+        panel.setBackground(new Color(243,243,243));
         //Row 1
           panel.add(hexButtons[0]);
           JButton lshiftButton = new JButton("<<");
           lshiftButton.setFont(new Font("Calibre",Font.PLAIN,20));
+            lshiftButton.setBackground(new Color(240,240,240));
+            lshiftButton.setForeground(Color.BLACK);
           panel.add(lshiftButton);
           JButton rshiftButton = new JButton(">>");
           rshiftButton.setFont(new Font("Calibre",Font.PLAIN,20));
+            rshiftButton.setBackground(new Color(240,240,240));
+            rshiftButton.setForeground(Color.BLACK);
           panel.add(rshiftButton);
           clrButton.setFont(myFont);
           panel.add(clrButton);
@@ -157,15 +192,21 @@ public class Calculator implements ActionListener{
           // Row 2
           panel.add(hexButtons[1]);
           JButton openBracket = new JButton("(");
+            openBracket.setBackground(new Color(240,240,240));
+            openBracket.setForeground(Color.BLACK);
           openBracket.setFont(myFont);
           panel.add(openBracket);
 
           JButton closeBracket = new JButton(")");
           closeBracket.setFont(myFont);
+            closeBracket.setBackground(new Color(240,240,240));
+            closeBracket.setForeground(Color.BLACK);
           panel.add(closeBracket);
 
           JButton modButton = new JButton("%");
           modButton.setFont(myFont);
+            modButton.setBackground(new Color(240,240,240));
+            modButton.setForeground(Color.BLACK);
           panel.add(modButton);
           panel.add(divButton);
 
@@ -198,8 +239,10 @@ public class Calculator implements ActionListener{
           pointButton.setFont(myFont);
           pointButton.setEnabled(false);
           panel.add(pointButton);
-          equButton.setBackground(new Color(0,120,215));
+          equButton.setBackground(new Color(0,120,212));
           equButton.setForeground(Color.WHITE);
+          equButton.setBorder(BorderFactory.createLineBorder(new Color(0,84,166),1));
+          equButton.setOpaque(true);
           panel.add(equButton);
 
 
